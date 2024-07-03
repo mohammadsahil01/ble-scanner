@@ -1,7 +1,7 @@
 <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="BLE_Device_Scanner_0"></a>BLE Scanner</h1>
 <h2 class="code-line" data-line-start=1 data-line-end=2 ><a id="This_React_Native_app_built_with_Expo_scans_for_nearby_BLE_devices_and_displays_their_names_and_RSSI_values_1"></a>This React Native application, developed using Expo, scans for nearby Bluetooth Low Energy (BLE) devices and displays their names along with their Received Signal Strength Indication (RSSI) values.</h2>
 
-<img src="ImgQ.jpg" alt="BLE Scanner" width="400" height="300">
+<img src="ImgQ.jpg" alt="BLE Scanner" width="200" height="400">
 
 <h2 class="code-line" data-line-start=3 data-line-end=4 ><a id="Prerequisites_3"></a>Prerequisites</h2>
 <ul>
