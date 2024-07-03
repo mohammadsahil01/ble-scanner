@@ -6,6 +6,7 @@ import {
   FlatList,
   Button,
   Platform,
+  Alert,
 } from "react-native";
 import { BleManager } from "react-native-ble-plx";
 import { request, PERMISSIONS, RESULTS } from "react-native-permissions";
@@ -26,6 +27,8 @@ export default function App() {
     const subscription = manager.onStateChange((state) => {
       if (state === "PoweredOn") {
         checkPermissions();
+      } else {
+        Alert.alert("Turn On the Bluetooth");
       }
     }, true);
 
@@ -36,7 +39,7 @@ export default function App() {
     let signalInterval, refreshInterval;
 
     if (scanning) {
-      signalInterval = setInterval(updateSignalStrength, 1000);
+      signalInterval = setInterval(updateSignalStrength, 2000);
       refreshInterval = setInterval(refreshDeviceList, 5000);
     } else {
       clearInterval(signalInterval);
@@ -81,7 +84,6 @@ export default function App() {
     if (scanning) return;
 
     setScanning(true);
-    setDevices({});
 
     manager.startDeviceScan(null, null, (error, device) => {
       if (error) {
@@ -119,17 +121,32 @@ export default function App() {
           }));
         })
         .catch((error) => {
+          setDevices((prevDevices) => {
+            const updatedDevices = { ...prevDevices };
+            delete updatedDevices[deviceId];
+            return updatedDevices;
+          });
           console.log(`Error reading RSSI for device ${deviceId}:`, error);
         });
     });
   };
 
   const refreshDeviceList = () => {
-    setDevices({});
+    const currentTime = Date.now();
+    setDevices((prevDevices) => {
+      const updatedDevices = { ...prevDevices };
+      Object.keys(updatedDevices).forEach((deviceId) => {
+        if (currentTime - updatedDevices[deviceId].lastUpdated > 10000) {
+          delete updatedDevices[deviceId];
+        }
+      });
+      return updatedDevices;
+    });
   };
 
   const stopScan = () => {
     manager.stopDeviceScan();
+    setDevices({});
     setScanning(false);
   };
 
@@ -164,6 +181,7 @@ export default function App() {
         title={scanning ? "Stop Scan" : "Start Scan"}
         onPress={scanning ? stopScan : checkPermissions}
       />
+      {scanning && <Text style={styles.scanningText}>Scanning...</Text>}
       {scanning && (
         <FlatList
           data={Object.values(devices)}
@@ -206,5 +224,11 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: "#666",
     marginTop: 5,
+  },
+  scanningText: {
+    marginTop: 10,
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "blue",
   },
 });
