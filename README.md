@@ -1,5 +1,6 @@
 <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="BLE_Device_Scanner_0"></a>BLE Scanner</h1>
 <h2 class="code-line" data-line-start=1 data-line-end=2 ><a id="This_React_Native_app_built_with_Expo_scans_for_nearby_BLE_devices_and_displays_their_names_and_RSSI_values_1"></a>This React Native application, developed using Expo, scans for nearby Bluetooth Low Energy (BLE) devices and displays their names along with their Received Signal Strength Indication (RSSI) values.</h2>
+![Image Alt Text](ImgQ.jpg)
 <h2 class="code-line" data-line-start=3 data-line-end=4 ><a id="Prerequisites_3"></a>Prerequisites</h2>
 <ul>
 <li class="has-line-data" data-line-start="4" data-line-end="5">Node.js (v18 or later)</li>
@@ -7,7 +8,7 @@
 <li class="has-line-data" data-line-start="7" data-line-end="9">Android Studio (for Android development)</li>
 </ul>
 <h2 class="code-line" data-line-start=9 data-line-end=10 ><a id="Installation_9"></a>Installation</h2>
-<p class="has-line-data" data-line-start="10" data-line-end="11">Clone the project from git</p>
+<p class="has-line-data" data-line-start="10" data-line-end="11">Clone the project</p>
 <pre><code class="has-line-data" data-line-start="12" data-line-end="15" class="language-sh">git <span class="hljs-built_in">clone</span> https://github.com/mohammadsahil01/ble-scanner
 <span class="hljs-built_in">cd</span> ble-scanner
 </code></pre>
@@ -37,6 +38,20 @@
 <li class="has-line-data" data-line-start="40" data-line-end="41">Start the Expo development server: <code>npx expo start</code></li>
 <li class="has-line-data" data-line-start="41" data-line-end="43">Scan the QR code with your device’s camera or the Expo Go app.</li>
 </ol>
+
+<h2 class="code-line" data-line-start=43 data-line-end=44 ><a id="Running_the_tests_43"></a>Running the tests</h2>
+<p class="has-line-data" data-line-start="45" data-line-end="46">To run the tests, simply run the command <code>npm test</code> OR <code>yarn test</code></p>
+
+- ✔ Renders the App correctly (747 ms)
+- ✔ Starts and Stops scanning (95 ms)
+- ✔ Displays Devices (214 ms)
+
+Test Suites: 1 passed, 1 total
+Tests: 3 passed, 3 total
+Snapshots: 0 total
+Time: 3.392 s
+Ran all test suites.
+
 <h2 class="code-line" data-line-start=43 data-line-end=44 ><a id="Building_Standalone_Apps_43"></a>Building Standalone Apps</h2>
 <h3 class="code-line" data-line-start=45 data-line-end=46 ><a id="iOS_IPA_45"></a>iOS (IPA)</h3>
 <ol>
