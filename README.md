@@ -56,8 +56,13 @@
 - **Permissions:** Bluetooth permissions must be granted on the device for the app to function properly.
 - **Android 12+ Note:** On Android 12+, location permissions may also be required for BLE scanning.
 
-<h2 class="code-line" data-line-start=60 data-line-end=61 ><a id="Potential_Additional_Features_60"></a>Additional Features to Add</h2>
+<h2 class="code-line" data-line-start=60 data-line-end=61 ><a id="Additional_Features_to_Add"></a>Additional Features to Add</h2>
 <ul>
 <li class="has-line-data" data-line-start="62" data-line-end="63">Device Filtering: Add an option to filter devices by name or signal strength.</li>
 <li class="has-line-data" data-line-start="63" data-line-end="64">Detailed Device Information: Display more detailed information about each device.</li>
+</ul>
+
+<h2 class="code-line" data-line-start=60 data-line-end=61 ><a id="Interesting_Problems_Encountered"></a>Interesting Problems Encountered</h2>
+<ul>
+<li class="has-line-data" data-line-start="62" data-line-end="63">Real-time Updates: Ensuring real-time updates of RSSI values required setting up intervals and properly managing state updates without causing performance issues.</li>
 </ul>
