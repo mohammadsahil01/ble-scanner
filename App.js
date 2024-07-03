@@ -164,6 +164,8 @@ export default function App() {
     <View style={styles.device}>
       <Text style={styles.deviceName}>{item.name}</Text>
       <Text style={styles.deviceRssi}>RSSI: {item.rssi}</Text>
+      <Text style={styles.deviceRssi}>ID: {item.id}</Text>
+
       <Text
         style={[
           styles.deviceStrength,
