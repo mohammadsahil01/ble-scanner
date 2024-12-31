@@ -116,7 +116,6 @@ export default function App() {
     });
   };
 
-  // Function to update the signal strength (RSSI) for each device
   const updateSignalStrength = () => {
     Object.keys(devices).forEach((deviceId) => {
       manager
