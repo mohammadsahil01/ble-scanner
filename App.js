@@ -21,7 +21,6 @@ const getSignalStrength = (rssi) => {
   return "Poor";
 };
 
-// Main App component
 export default function App() {
   const [devices, setDevices] = useState({});
   const [scanning, setScanning] = useState(false);
